@@ -46,8 +46,8 @@ build_kernel () {
 		echo ""
 	else 
 		echo "### .config not found"
-		echo "### creating defconfig"
-		CMD=defconfig
+		echo "### copying our defconfig"
+		cp .config builds/kernel/i386/
 		make_cmd
 	fi
 	CMD=
@@ -118,6 +118,7 @@ do
 	echo "    exit                           exit kernel build"
 	echo ""
 	echo " or leave blank for default build procedure"
+	echo "                                      by Konrad Grzeca"
 	echo "------------------------------------------------------"
 	startmenu
 done

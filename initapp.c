@@ -1,6 +1,6 @@
 
-#include <sys/sysinfo.h>
 #include <stdio.h>
+#include <sys/sysinfo.h>
 
 int main() {
 	struct sysinfo info;
@@ -12,5 +12,10 @@ int main() {
 	printf("Free RAM: %lu\n", info.freeram);
 	printf("Process count: %d\n", info.procs);
 	printf("Page size: %d\n", info.mem_unit);
+	printf("Going to sleep");
+	while (1) {
+		sleep(1000);
+		printf(".");
+	}
 	return 0;
 }
